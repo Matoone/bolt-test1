@@ -1,0 +1,22 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+.action-bar {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn {
+  font-size: 18;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: white;
+}
+
+.h2 {
+  font-size: 24;
+  font-weight: bold;
+}

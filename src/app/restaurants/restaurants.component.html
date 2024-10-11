@@ -1,0 +1,18 @@
+<ActionBar title="Restaurants" class="action-bar"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label text="Available Restaurants" class="h2 text-center m-4 font-bold"></Label>
+    <ListView [items]="restaurants" separatorColor="transparent">
+      <ng-template let-item="item">
+        <GridLayout columns="*, auto" rows="auto" class="restaurant-item p-4 m-y-5">
+          <StackLayout col="0">
+            <Label [text]="item.name" class="text-lg font-bold"></Label>
+            <Label [text]="item.cuisine" class="text-sm text-gray-500"></Label>
+          </StackLayout>
+          <Button col="1" text="View Menu" [nsRouterLink]="['/menu', item.id]" class="btn btn-primary"></Button>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

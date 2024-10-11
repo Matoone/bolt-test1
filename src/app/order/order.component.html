@@ -1,0 +1,13 @@
+<ActionBar title="Your Order"></ActionBar>
+
+<StackLayout>
+  <ListView [items]="orderItems">
+    <ng-template let-item="item">
+      <GridLayout columns="*, auto" class="p-4">
+        <Label [text]="item.name" col="0"></Label>
+        <Label [text]="'$' + item.price" col="1"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+  <Button text="Place Order" (tap)="placeOrder()" class="bg-green-500 text-white p-4 m-4 rounded"></Button>
+</StackLayout>

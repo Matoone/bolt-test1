@@ -1,0 +1,21 @@
+<ActionBar [title]="'Menu - Restaurant ' + restaurantId" class="action-bar"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <ListView [items]="menuItems" separatorColor="transparent">
+      <ng-template let-item="item">
+        <GridLayout rows="auto, auto" columns="100, *" class="menu-item m-y-10">
+          <Image [src]="item.image" row="0" col="0" rowSpan="2" class="rounded-lg"></Image>
+          <StackLayout row="0" col="1" class="p-x-10">
+            <Label [text]="item.name" class="font-bold text-lg"></Label>
+            <Label [text]="item.description" textWrap="true" class="text-sm text-gray-500"></Label>
+          </StackLayout>
+          <GridLayout row="1" col="1" columns="*, auto" class="p-x-10">
+            <Label [text]="'$' + item.price" class="text-md text-green-600"></Label>
+            <Button text="Add" (tap)="addToOrder(item)" class="add-button -m-5"></Button>
+          </GridLayout>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

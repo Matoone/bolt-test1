@@ -1,0 +1,14 @@
+<ActionBar title="Available Orders"></ActionBar>
+
+<ListView [items]="availableOrders">
+  <ng-template let-order="item">
+    <GridLayout columns="*, auto" class="p-4">
+      <StackLayout col="0">
+        <Label [text]="'Order #' + order.id" class="font-bold"></Label>
+        <Label [text]="'Restaurant: ' + order.restaurantName"></Label>
+        <Label [text]="'Customer: ' + order.customerName"></Label>
+      </StackLayout>
+      <Button col="1" text="Accept" (tap)="acceptOrder(order.id)" class="bg-green-500 text-white p-2 rounded"></Button>
+    </GridLayout>
+  </ng-template>
+</ListView>
